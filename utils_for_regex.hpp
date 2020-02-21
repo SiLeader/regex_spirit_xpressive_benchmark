@@ -28,7 +28,7 @@ inline Table CreateTable(const std::string& str) {
 
 template <class Pred>
 std::vector<std::string> SplitAndTrim(const std::string& str, Pred&& delim) {
-  std::vector<std::string> ks(2);
+  std::vector<std::string> ks;
   boost::algorithm::split(ks, str, std::forward<Pred>(delim));
 
   std::transform(std::begin(ks), std::end(ks), std::begin(ks), [](const std::string& str) { return boost::algorithm::trim_copy(str); });
@@ -48,6 +48,20 @@ inline ValueList CreateValues(const std::string& str) {
   });
 
   return values;
+}
+
+inline KeyValue CreateKeyValue(const std::string& str) {
+  auto kvf = SplitAndTrim(str, boost::is_any_of("="));
+  return {kvf[0], kvf[1]};
+}
+
+inline KeyValueList CreateKeyValueList(const std::string& str) {
+  auto kvsf = SplitAndTrim(str, boost::is_any_of(","));
+  KeyValueList kvs(kvsf.size());
+
+  std::transform(std::begin(kvsf), std::end(kvsf), std::begin(kvs), [](const std::string& str) { return CreateKeyValue(str); });
+
+  return kvs;
 }
 
 }  // namespace utils

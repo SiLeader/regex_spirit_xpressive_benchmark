@@ -1,0 +1,19 @@
+Boost.Xpressive: elapsed: 74885ms
+std::regex: elapsed: 4206ms
+Boost.Spirit.Qi: elapsed: 9931ms
+
+Boost.Xpressive: elapsed: 75501ms
+std::regex: elapsed: 4149ms
+Boost.Spirit.Qi: elapsed: 9862ms
+
+Boost.Xpressive: elapsed: 74427ms
+std::regex: elapsed: 4183ms
+Boost.Spirit.Qi: elapsed: 9983ms
+
+Boost.Xpressive: elapsed: 75963ms
+std::regex: elapsed: 4167ms
+Boost.Spirit.Qi: elapsed: 9907ms
+
+Boost.Xpressive: elapsed: 73417ms
+std::regex: elapsed: 4135ms
+Boost.Spirit.Qi: elapsed: 10009ms
